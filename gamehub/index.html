@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technophiles - The Ultimate Game Hub</title>
+    <meta name="description" content="Technophiles: Play the best collection of free online games.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Outfit:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Splash Screen / Intro -->
+    <div id="intro-screen">
+        <div class="intro-content">
+            <h1 class="glitch" data-text="TECHNOPHILES">TECHNOPHILES</h1>
+            <p>Loading the future of gaming...</p>
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <!-- Retro Game Loader -->
+    <div id="game-loader">
+        <div class="retro-text">TECHNOPHILES</div>
+        <div class="loading-status">INITIALIZING CARTRIDGE...</div>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="app-container" class="hidden">
+
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <i class="fa-solid fa-gamepad"></i>
+                <span>TECHNOPHILES</span>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#" id="nav-home" class="active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#" id="nav-trending"><i class="fa-solid fa-fire"></i> Trending</a>
+                <a href="#" id="nav-categories"><i class="fa-solid fa-layer-group"></i> Categories</a>
+
+                <div class="nav-divider"></div>
+
+                <a href="#" id="nav-favorites"><i class="fa-solid fa-heart"></i> Favorites</a>
+                <a href="#" id="help-btn"><i class="fa-solid fa-circle-info"></i> Server Help</a>
+            </nav>
+        </aside>
+
+        <!-- Help Modal -->
+        <div id="help-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2><i class="fa-solid fa-server"></i> Game Server Required</h2>
+                <div class="modal-body">
+                    <p>Technophiles uses advanced 3D games that <strong>cannot</strong> run directly from a file folder
+                        (file://).</p>
+
+                    <div class="alert-box">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <p>If you see a black screen or errors, you are likely running in <strong>File Mode</strong>.
+                        </p>
+                    </div>
+
+                    <h3>How to Play Correctly:</h3>
+                    <ol>
+                        <li>Open your terminal to the project folder.</li>
+                        <li>Run the command: <code class="cmd">python3 gamehub/play.py</code></li>
+                        <li>This window will open automatically.</li>
+                        <li><strong>Always play from:</strong> <a href="http://localhost:8000">http://localhost:8000</a>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Page Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="game-search" placeholder="Search for games...">
+                </div>
+                <div class="user-profile">
+                    <button class="icon-btn"><i class="fa-solid fa-bell"></i></button>
+                    <div class="avatar">TP</div>
+                </div>
+            </header>
+
+            <section class="hero-banner">
+                <div class="slideshow-container">
+                    <!-- Slide 1: 2048 -->
+                    <div class="slide fade active">
+                        <div class="hero-text">
+                            <h2>Featured Game</h2>
+                            <h1>2048</h1>
+                            <p>Join the numbers and get to the 2048 tile! A classic puzzle game for smart minds.</p>
+                            <a href="games/2048/index.html" class="play-btn"><i class="fa-solid fa-play"></i> Play
+                                Now</a>
+                        </div>
+                        <div class="hero-visual">
+                            <div class="art-2048">2048</div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Minecraft -->
+                    <div class="slide fade">
+                        <div class="hero-text">
+                            <h2>Top Rated</h2>
+                            <h1>Minecraft</h1>
+                            <p>Build, explore, and survive in an infinite blocky world. Now in your browser!</p>
+                            <a href="games/minecraft/index.html" class="play-btn"><i class="fa-solid fa-play"></i> Play
+                                Now</a>
+                        </div>
+                        <div class="hero-visual">
+                            <div class="art-minecraft"><i class="fa-solid fa-cube"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Slope -->
+                    <div class="slide fade">
+                        <div class="hero-text">
+                            <h2>Action Packed</h2>
+                            <h1>Slope</h1>
+                            <p>Speed down a randomized slope. Avoid obstacles and don't fall off!</p>
+                            <a href="games/slope/index.html" class="play-btn"><i class="fa-solid fa-play"></i> Play
+                                Now</a>
+                        </div>
+                        <div class="hero-visual">
+                            <div class="art-slope"><i class="fa-solid fa-road"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Subway Surfers -->
+                    <div class="slide fade">
+                        <div class="hero-text">
+                            <h2>Fan Favorite</h2>
+                            <h1>Subway Surfers</h1>
+                            <p>Dash as fast as you can! Dodge the oncoming trains and escape the inspector.</p>
+                            <a href="games/subway-surfers/index.html" class="play-btn"><i class="fa-solid fa-play"></i>
+                                Play Now</a>
+                        </div>
+                        <div class="hero-visual">
+                            <div class="art-subway"><i class="fa-solid fa-train-subway"></i></div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Controls -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+                <!-- Dots -->
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                </div>
+            </section>
+
+            <section class="games-section">
+                <div class="section-header">
+                    <h2>All Games</h2>
+                    <div class="filters">
+                        <button class="filter-btn active">All</button>
+                        <button class="filter-btn">Action</button>
+                        <button class="filter-btn">Puzzle</button>
+                        <button class="filter-btn">Arcade</button>
+                    </div>
+                </div>
+
+                <div class="games-grid" id="games-grid">
+
+                    <!-- 2048 -->
+                    <a href="games/2048/index.html" class="game-card" data-category="puzzle">
+                        <div class="card-image bg-2048">
+                            <span>2048</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>2048</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                    <!-- Hextris -->
+                    <a href="games/hextris/index.html" class="game-card" data-category="arcade">
+                        <div class="card-image bg-hextris">
+                            <span>Hextris</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Hextris</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.5</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                    <!-- Stickman Parkour -->
+                    <a href="games/stickman-parkour/index.html" class="game-card" data-category="action">
+                        <div class="card-image bg-stickman">
+                            <span>Stickman Parkour</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Stickman Parkour</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.2</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                    <!-- Guess Number -->
+                    <a href="games/guess-number/index.html" class="game-card" data-category="puzzle">
+                        <div class="card-image bg-guess">
+                            <span>Guess Number</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Guess Number</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 3.9</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                    <!-- Minecraft -->
+                    <a href="games/minecraft/index.html" class="game-card" data-category="action">
+                        <div class="card-image bg-minecraft">
+                            <span>Minecraft</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Minecraft Web</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 5.0</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                    <!-- Slope -->
+                    <a href="games/slope/index.html" class="game-card" data-category="arcade">
+                        <div class="card-image bg-slope">
+                            <span>Slope</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Slope</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.5</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                    <!-- Subway Surfers -->
+                    <a href="games/subway-surfers/index.html" class="game-card" data-category="action">
+                        <div class="card-image bg-subway">
+                            <span>Subway Surfers</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Subway Surfers</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.8</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+
+
+                    <!-- Cut The Rope -->
+                    <a href="games/cuttherope/index.html" class="game-card" data-category="puzzle">
+                        <div class="card-image bg-rope">
+                            <span>Cut The Rope</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Cut The Rope</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.6</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                    <!-- Geometry Dash -->
+                    <a href="games/geometrydash/index.html" class="game-card" data-category="arcade">
+                        <div class="card-image bg-geometry">
+                            <span>Geometry Dash</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Geometry Dash</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.9</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                    <!-- Crossy Road -->
+                    <a href="games/crossyroad/index.html" class="game-card" data-category="arcade">
+                        <div class="card-image bg-crossy">
+                            <span>Crossy Road</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Crossy Road</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.3</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                    <!-- Basketball Stars -->
+                    <a href="games/basketballstars/index.html" class="game-card" data-category="action">
+                        <div class="card-image bg-basket">
+                            <span>Basketball Stars</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Basketball Stars</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.2</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                    <!-- Flappy Bird -->
+                    <a href="games/flappybird/index.html" class="game-card" data-category="arcade">
+                        <div class="card-image bg-flappy">
+                            <span>Flappy Bird</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>Flappy Bird</h3>
+                            <div class="rating"><i class="fa-solid fa-star"></i> 4.0</div>
+                        </div>
+                        <div class="card-hover">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
